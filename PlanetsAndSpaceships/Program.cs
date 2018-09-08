@@ -17,20 +17,31 @@ namespace PlanetsAndSpaceships
             // Adds morePlanets to planetList
             planetList.AddRange(morePlanets);
 
-            planetList.Insert(2, "Earth");
+            planetList.Insert(1, "Earth");
             planetList.Insert(1, "Venus");
 
             planetList.Add("Pluto");
 
+            List<string> rockyPlanets = new List<string>();
+            rockyPlanets = planetList.GetRange(0, 4);
+
+            planetList.Remove("Pluto");
+
+            Console.WriteLine("All Planets: ");
             for (int i = 0; i < planetList.Count; i++ )
             {
                 Console.WriteLine(planetList[i]);
             }
+
+            Console.WriteLine("");
+            Console.WriteLine("Rocky Planets: ");
+            for (int i = 0; i < rockyPlanets.Count; i++)
+            {
+                Console.WriteLine(rockyPlanets[i]);
+            }
             Console.ReadLine();
 
 
-            //Now that all the planets are in the list, slice the list using GetRange() in order to extract the rocky planets into a new list called rockyPlanets.
-            //Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the Remove() method to eliminate it from the end of planetList.
             //Iterating over planets
             //Ref: List of Solar System probes
 
