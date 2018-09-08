@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PlanetsAndSpaceships
 {
@@ -6,17 +7,28 @@ namespace PlanetsAndSpaceships
     {
         static void Main(string[] args)
         {
+            // Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+            List<string> planetList = new List<string>() { "Mercury", "Mars" };
+            planetList.Add("Jupiter");
+            planetList.Add("Saturn");
+
+            List<string> morePlanets = new List<string>() { "Uranus", "Neptune" };
+
+            // Adds morePlanets to planetList
+            planetList.AddRange(morePlanets);
+
+            planetList.Insert(2, "Earth");
+            planetList.Insert(1, "Venus");
+
+            planetList.Add("Pluto");
+
+            for (int i = 0; i < planetList.Count; i++ )
+            {
+                Console.WriteLine(planetList[i]);
+            }
+            Console.ReadLine();
 
 
-
-            //            In the Main method, place the following code
-
-            //List<string> planetList = new List<string>() { "Mercury", "Mars" };
-            //            Add() Jupiter and Saturn at the end of the list.
-            //Create another List that contains that last two planet of our solar system.
-            //Combine the two lists by using AddRange().
-            //Use Insert() to add Earth, and Venus in the correct order.
-            //Use Add() again to add Pluto to the end of the list.
             //Now that all the planets are in the list, slice the list using GetRange() in order to extract the rocky planets into a new list called rockyPlanets.
             //Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the Remove() method to eliminate it from the end of planetList.
             //Iterating over planets
