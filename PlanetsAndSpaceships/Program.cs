@@ -17,17 +17,19 @@ namespace PlanetsAndSpaceships
             // Adds morePlanets to planetList
             planetList.AddRange(morePlanets);
 
+            // Add planets to the list
             planetList.Insert(1, "Earth");
             planetList.Insert(1, "Venus");
-
             planetList.Add("Pluto");
 
             List<string> rockyPlanets = new List<string>();
             rockyPlanets = planetList.GetRange(0, 4);
 
+            // Pluto is not a planet
             planetList.Remove("Pluto");
 
             Console.WriteLine("All Planets: ");
+            // Print out all the planets
             for (int i = 0; i < planetList.Count; i++ )
             {
                 Console.WriteLine(planetList[i]);
@@ -35,22 +37,32 @@ namespace PlanetsAndSpaceships
 
             Console.WriteLine("");
             Console.WriteLine("Rocky Planets: ");
+            // Print out the rocky planets (the first 4 in the solar system
             for (int i = 0; i < rockyPlanets.Count; i++)
             {
                 Console.WriteLine(rockyPlanets[i]);
             }
+
+            Console.WriteLine("");
+            Console.WriteLine("Planets and some of the space probes that have studied the planet.");
+            // Build new Dictionary of Planets and Space Probes 
+            var spaceProbes = new Dictionary<string, string> {
+                { "Mercury", "Mariner, Messenger, BepiColombo" },
+                { "Venus", "Mariner, Pioneer, Galileo, Magellan, Cassini, Messenger"},
+                { "Mars", "Mariner, Viking, Observer, Pathfinder"},
+                { "Jupiter", "Pioneer, Voyager, Galileo, Cassini" },
+                { "Saturn", "Pioneer, Voyager, Cassini" },
+                { "Uranus", "Voyager" },
+                { "Neptune", "Voyager" }
+            };
+
+            // iterates over spaceProbes dictionary and prints key and value
+            foreach (var i in spaceProbes)
+            {
+                Console.WriteLine(i.Key + ": " + i.Value);
+            }
+
             Console.ReadLine();
-
-
-            //Iterating over planets
-            //Ref: List of Solar System probes
-
-            //Create another dictionary that will hold the name of a spacecraft that we have launched, and a list of names of the planets that it has visited.Remember that List is a Type just like native types(such as string, int, &bool) and your custom types(such as Movie, Dog, and Food). They can be passed to anything, like a dictionary, as a Type.
-            //Iterate over your list of planets from above, and inside that loop, iterate over the dictionary. Write to the console, for each planet, which satellites have visited which planet.
-            //Mars: Viking, Opportunity, Curiosity
-            //Venus: Mariner, Venera
-
-            //etc...
         }
     }
 }
